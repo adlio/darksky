@@ -82,8 +82,8 @@ If you'd like to set your own excludes= list, or set other arguments, you'll nee
 `darksky.Arguments` directly. The type is a simple map[string]string:
 
 ```Go
-// No query string parameters (i.e. URL ends with /lat,lng)
-f, err := client.GetForecast(lat,lng,darksky.Arguments{"excludes":"minutely","units": "si"})
+// Custom query string parameters (/lat,lng?excludes=minutely&units=si&extend=hourly)
+f, err := client.GetForecast(lat,lng,darksky.Arguments{"excludes":"minutely","units": "si", "extend": "hourly"})
 
 ```
 

@@ -18,6 +18,7 @@ To use the Go libary client, instantiate a `darksky.Client` with your Dark Sky A
 ```Go
 lat := "47.202"
 lng := "-123.4167"
+
 client := darksky.Client("APIKEYHERE")
 f, err := client.GetForecast(lat, lng, darksky.Defaults)
 if err != nil {
@@ -41,3 +42,35 @@ fmt.Println("Summary:     " + f.Currently.Summary)
 fmt.Println("Temperature: " + f.Currently.Temperature)
 fmt.Println("Icon:        " + f.Currently.Icon)
 ```
+
+## Time Machine Usage
+
+The [Dark Sky](https://darksky.net) API supports requests for retrieving weather data
+in the past and the future through time machine calls. Use `GetTimeMachineForecast(lat, lng, time, args)`
+to retrieve time machine data.
+
+```Go
+lat := "47.202"
+lng := "-123.4167"
+lastYear := time.Now().AddDate(-1,0,0)
+
+client := darksky.Client("APIKEYHERE")
+f, err := client.GetTimeMachineForecast(lat, lng, lastYear, darksky.Defaults)
+if err != nil {
+  // Handle error
+}
+```
+
+## A Note About time.Time and darksky.Time
+
+The Dark Sky API uses Unix timestamps everywhere times are represented. For #golang developer convenience,
+this package uses `time.Time` where possible. The time values inside `Forecast`s, however, are of type
+`darksky.Time`, which wraps `time.Time`. You can use `.Time()` to get the underlying `time.Time` value,
+and you can call Time methods directly as well.
+
+```Go
+f, err := client.GetTimeMachineForecast(lat, lng, lastYear, darksky.Defaults)
+fmt.Println("Temp: " + f.Currently.Temperature)
+fmt.Println("Time: " + f.Currently.Time.Format("2006-01-02 15:04:05"))
+```
+

@@ -1,23 +1,23 @@
 package darksky
 
 type DataPoint struct {
-	ApparentTemperature        float64 `json:"apparentTemperature"`
-	ApparentTemperatureMax     float64 `json:"apparentTemperatureMax"`
-	ApparentTemperatureMaxTime string  `json:"apparentTemperatureMaxTime"`
-	ApparentTemperatureMin     float64 `json:"apparentTemperatureMin"`
-	ApparentTemperatureMinTime string  `json:"apparentTemperatureMinTime"`
-	CloudCover                 float64 `json:"cloudCover"`
-	DewPoint                   float64 `json:"dewPoint"`
-	Humidity                   float64 `json:"humidity"`
-	Icon                       string  `json:"icon"`
-	MoonPhase                  float64 `json:"moonPhase"`
-	NearestStormBearing        string  `json:"nearestStormBearing"`
-	NearestStormDistance       float64 `json:"nearestStormDistance"`
-	Ozone                      float64 `json:"ozone"`
+	ApparentTemperature        float64 `json:"apparentTemperature,omitempty"`
+	ApparentTemperatureMax     float64 `json:"apparentTemperatureMax,omitempty"`
+	ApparentTemperatureMaxTime Time    `json:"apparentTemperatureMaxTime,omitempty"`
+	ApparentTemperatureMin     float64 `json:"apparentTemperatureMin,omitempty"`
+	ApparentTemperatureMinTime Time    `json:"apparentTemperatureMinTime,omitempty"`
+	CloudCover                 float64 `json:"cloudCover,omitempty"`
+	DewPoint                   float64 `json:"dewPoint,omitempty"`
+	Humidity                   float64 `json:"humidity,omitempty"`
+	Icon                       string  `json:"icon,omitempty"`
+	MoonPhase                  float64 `json:"moonPhase,omitempty"`
+	NearestStormBearing        float64 `json:"nearestStormBearing,omitempty"`
+	NearestStormDistance       float64 `json:"nearestStormDistance,omitempty"`
+	Ozone                      float64 `json:"ozone,omitempty"`
 	PrecipAccumulation         float64 `json:"precipAccumulation"`
 	PrecipIntensity            float64 `json:"precipIntensity"`
 	PrecipIntensityMax         float64 `json:"precipIntensityMax"`
-	PrecipIntensityMaxTime     float64 `json:"precipIntensityMaxTime"`
+	PrecipIntensityMaxTime     Time    `json:"precipIntensityMaxTime"`
 	PrecipProbability          float64 `json:"precipProbability"`
 	PrecipType                 string  `json:"precipType"`
 	Pressure                   float64 `json:"pressure"`
@@ -29,7 +29,7 @@ type DataPoint struct {
 	TemperatureMaxTime         float64 `json:"temperatureMaxTime"`
 	TemperatureMin             float64 `json:"temperatureMin"`
 	TemperatureMinTime         float64 `json:"temperatureMinTime"`
-	Time                       float64 `json:"time"`
+	Time                       Time    `json:"time"`
 	Visibility                 float64 `json:"visibility"`
 	WindBearing                float64 `json:"windBearing"`
 	WindSpeed                  float64 `json:"windSpeed"`

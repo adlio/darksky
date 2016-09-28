@@ -19,13 +19,14 @@ const DEFAULT_BASEURL = "https://api.darksky.net/forecast"
 
 func NewClient(apiKey string) *Client {
 	return &Client{
+		client:  http.DefaultClient,
 		APIKey:  apiKey,
 		BaseURL: DEFAULT_BASEURL,
 	}
 }
 
 func (c *Client) GetForecast(lat, lng string, args Arguments) (forecast *Forecast, err error) {
-	path := fmt.Sprintf("%,%", lat, lng)
+	path := fmt.Sprintf("%s,%s", lat, lng)
 	return c.Get(path, args)
 }
 

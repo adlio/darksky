@@ -78,6 +78,15 @@ f, err := client.GetForecast(lat,lng,darksky.CurrentOnly)
 
 ```
 
+If you'd like to set your own excludes= list, or set other arguments, you'll need to construct a
+`darksky.Arguments` directly. The type is a simple map[string]string:
+
+```Go
+// No query string parameters (i.e. URL ends with /lat,lng)
+f, err := client.GetForecast(lat,lng,darksky.Arguments{"excludes":"minutely","units": "si"})
+
+```
+
 ## A Note About time.Time and darksky.Time
 
 The Dark Sky API uses Unix timestamps everywhere times are represented. For #golang developer convenience,

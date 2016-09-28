@@ -64,7 +64,7 @@ if err != nil {
 ## A Note About time.Time and darksky.Time
 
 The Dark Sky API uses Unix timestamps everywhere times are represented. For #golang developer convenience,
-this package uses `time.Time` where possible. The time values inside `Forecast`s, however, are of type
+this package uses `time.Time` where possible. The time values inside `Forecast`, however, are of type
 `darksky.Time`, which wraps `time.Time`. You can use `.Time()` to get the underlying `time.Time` value,
 and you can call Time methods directly as well.
 

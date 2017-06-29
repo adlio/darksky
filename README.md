@@ -19,7 +19,7 @@ To use the Go libary client, instantiate a `darksky.Client` with your Dark Sky A
 lat := "47.202"
 lng := "-123.4167"
 
-client := darksky.Client("APIKEYHERE")
+client := darksky.NewClient("APIKEYHERE")
 f, err := client.GetForecast(lat, lng, darksky.Defaults)
 if err != nil {
   // Handle error

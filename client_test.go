@@ -35,7 +35,7 @@ func TestGetForecast(t *testing.T) {
 	}
 
 	if curr.NearestStormDistance != 3 {
-		t.Errorf("Got incorrect NearestStormDistance %d", curr.NearestStormDistance)
+		t.Errorf("Got incorrect NearestStormDistance %f", curr.NearestStormDistance)
 	}
 
 	if curr.Temperature != 55.13 {

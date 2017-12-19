@@ -8,9 +8,9 @@ package darksky
 type DataPoint struct {
 	ApparentTemperature        float64 `json:"apparentTemperature,omitempty"`
 	ApparentTemperatureMax     float64 `json:"apparentTemperatureMax,omitempty"`
-	ApparentTemperatureMaxTime Time    `json:"apparentTemperatureMaxTime,omitempty"`
+	ApparentTemperatureMaxTime *Time   `json:"apparentTemperatureMaxTime,omitempty"`
 	ApparentTemperatureMin     float64 `json:"apparentTemperatureMin,omitempty"`
-	ApparentTemperatureMinTime Time    `json:"apparentTemperatureMinTime,omitempty"`
+	ApparentTemperatureMinTime *Time   `json:"apparentTemperatureMinTime,omitempty"`
 	CloudCover                 float64 `json:"cloudCover,omitempty"`
 	DewPoint                   float64 `json:"dewPoint,omitempty"`
 	Humidity                   float64 `json:"humidity,omitempty"`
@@ -22,7 +22,7 @@ type DataPoint struct {
 	PrecipAccumulation         float64 `json:"precipAccumulation"`
 	PrecipIntensity            float64 `json:"precipIntensity"`
 	PrecipIntensityMax         float64 `json:"precipIntensityMax"`
-	PrecipIntensityMaxTime     Time    `json:"precipIntensityMaxTime"`
+	PrecipIntensityMaxTime     *Time   `json:"precipIntensityMaxTime,omitempty"`
 	PrecipProbability          float64 `json:"precipProbability"`
 	PrecipType                 string  `json:"precipType"`
 	Pressure                   float64 `json:"pressure"`

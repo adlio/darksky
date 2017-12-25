@@ -6,7 +6,7 @@
 package darksky
 
 type Flags struct {
-	DarkSkyUnavailable bool     `json:"darksky-unavailable"`
-	MetNoLicense       bool     `json:"meto-license"`
+	DarkSkyUnavailable string   `json:"darksky-unavailable"`
 	Sources            []string `json:"sources"`
+	Units              string   `json:"units"`
 }
